@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clinic-no-show-ml"
+version = "0.1.0"
+description = "Educational temporal evaluation of appointment no-show prediction"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "scikit-learn==1.9.1",
+  "pandas==2.3.3",
+  "numpy==2.5.4",
+  "joblib==1.6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+noshow-train = "noshow.train:main"
+noshow-predict = "noshow.predict:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,127 @@
+{
+  "dataset_sha256": "9132d3e7d0246617df9041d3764f20ad6f08e7b0d9f0997fa254fc5e52eda27d",
+  "versions": {
+    "sklearn": "1.9.1",
+    "pandas": "2.3.3",
+    "numpy": "2.5.4"
+  },
+  "seed": 42,
+  "target": "1 = appointment no-show",
+  "features": [
+    "lead_days",
+    "booking_hour",
+    "booking_weekday",
+    "appointment_weekday",
+    "same_day"
+  ],
+  "cleaning": {
+    "source_rows": 110527,
+    "valid_rows": 110522,
+    "invalid_date_rows": 5
+  },
+  "temporal_evaluation": {
+    "validation_start": "2016-05-18T00:00:00+00:00",
+    "test_start": "2016-05-31T00:00:00+00:00",
+    "purged_train_labels": 19638,
+    "purged_validation_labels": 6535,
+    "splits": {
+      "train": {
+        "rows": 54889,
+        "no_show_rate": 0.20998742917524457,
+        "booking_min": "2015-11-10T07:13:56+00:00",
+        "booking_max": "2016-05-17T18:45:24+00:00",
+        "appointment_max": "2016-05-17T00:00:00+00:00"
+      },
+      "validation": {
+        "rows": 12864,
+        "no_show_rate": 0.10401119402985075,
+        "booking_min": "2016-05-18T06:33:15+00:00",
+        "booking_max": "2016-05-30T20:25:18+00:00",
+        "appointment_max": "2016-05-30T00:00:00+00:00"
+      },
+      "test": {
+        "rows": 16596,
+        "no_show_rate": 0.10773680404916848,
+        "booking_min": "2016-05-31T06:36:06+00:00",
+        "booking_max": "2016-06-08T20:07:23+00:00",
+        "appointment_max": "2016-06-08T00:00:00+00:00"
+      }
+    }
+  },
+  "selection_metric": "validation average precision",
+  "selected_model": "logistic_regression",
+  "validation": {
+    "baseline": {
+      "average_precision": 0.10401119402985075,
+      "roc_auc": 0.5,
+      "brier": 0.1044238279619273,
+      "log_loss": 0.3735213770653465,
+      "accuracy_at_05": 0.8959888059701493,
+      "precision_at_05": 0.0,
+      "recall_at_05": 0.0
+    },
+    "logistic_regression": {
+      "average_precision": 0.2239270436067461,
+      "roc_auc": 0.7336137677421061,
+      "brier": 0.08570412100014843,
+      "log_loss": 0.295468173776864,
+      "accuracy_at_05": 0.8959888059701493,
+      "precision_at_05": 0.0,
+      "recall_at_05": 0.0
+    },
+    "hist_gradient_boosting": {
+      "average_precision": 0.2223078790087163,
+      "roc_auc": 0.7366033043639297,
+      "brier": 0.08589556490594384,
+      "log_loss": 0.2965836486224301,
+      "accuracy_at_05": 0.8959888059701493,
+      "precision_at_05": 0.0,
+      "recall_at_05": 0.0
+    }
+  },
+  "test": {
+    "baseline": {
+      "average_precision": 0.10773680404916848,
+      "roc_auc": 0.5,
+      "brier": 0.1065847754411129,
+      "log_loss": 0.37845781477410334,
+      "accuracy_at_05": 0.8922631959508315,
+      "precision_at_05": 0.0,
+      "recall_at_05": 0.0
+    },
+    "logistic_regression": {
+      "average_precision": 0.2044848829800128,
+      "roc_auc": 0.7223191187241432,
+      "brier": 0.08986903354891129,
+      "log_loss": 0.30757519969177083,
+      "accuracy_at_05": 0.8922631959508315,
+      "precision_at_05": 0.0,
+      "recall_at_05": 0.0
+    },
+    "hist_gradient_boosting": {
+      "average_precision": 0.21542432367290787,
+      "roc_auc": 0.7234431823538156,
+      "brier": 0.08939141343107791,
+      "log_loss": 0.30756568819740643,
+      "accuracy_at_05": 0.8922631959508315,
+      "precision_at_05": 0.0,
+      "recall_at_05": 0.0
+    }
+  },
+  "test_reminder_simulation": {
+    "budget_fraction": 0.2,
+    "selected": 3320,
+    "captured_no_shows": 756,
+    "precision": 0.22771084337349398,
+    "recall": 0.4228187919463087,
+    "lift_over_random_expectation": 2.113584539500283
+  },
+  "limitations": [
+    "Historical 2016 sample; no external clinic validation",
+    "Only calendar features; demographics, patient IDs, clinical flags and SMS excluded",
+    "No causal estimate of reminder impact or reduced no-shows",
+    "UTC calendar interpretation; local timezone mapping not verified",
+    "Existing data may include repeated patients across dates; no new-patient holdout",
+    "Scores not externally calibrated; retrospective educational use only"
+  ]
+}

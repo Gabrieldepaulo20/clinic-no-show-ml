@@ -1,0 +1,9 @@
+{
+  "source_url": "https://www.kaggle.com/datasets/joniarroba/noshowappointments",
+  "download_url": "https://www.kaggle.com/api/v1/datasets/download/joniarroba/noshowappointments?datasetVersionNumber=5",
+  "version": 5,
+  "author": "Joni Hoppen / Aquarela Analytics",
+  "license": "CC BY-NC-SA 4.0",
+  "csv_sha256": "9132d3e7d0246617df9041d3764f20ad6f08e7b0d9f0997fa254fc5e52eda27d",
+  "bytes": 10739535
+}
