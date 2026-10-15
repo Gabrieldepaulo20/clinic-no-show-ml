@@ -77,7 +77,7 @@ Próximas evoluções possíveis: explicar os resultados por janela, estudar a d
 
 ## Autoria e aprendizado
 
-Gabriel ainda não havia construído modelo preditivo ao iniciar este projeto. O código inicial, os testes e a execução foram preparados com assistência do Codex. Isso não representa experiência prévia de Gabriel em treinar modelos nem domínio independente já demonstrado. O objetivo é executar, compreender, questionar e evoluir a solução, registrando contribuições e decisões próprias. O [roteiro de estudo](docs/LEARNING.md) guia essa etapa.
+Projeto de aprendizado preparado com apoio do Codex na implementação inicial, nos testes e na execução. O [roteiro de estudo](docs/LEARNING.md) orienta Gabriel a executar, compreender, questionar e evoluir a solução. Contribuições pessoais e decisões técnicas serão registradas nos commits e na documentação.
 
 ## Licenças
 
